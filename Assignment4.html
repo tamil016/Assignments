@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random color</title>
+    <style>
+        #container{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="input">
+            <input id="inpu" type="text" onchange="changeColor()">
+        </div>
+    </div>
+</body>
+<script>
+    let inpu = document.getElementById('inpu')
+    let container = document.getElementById('container')
+    function changeColor(){
+        let randomColor  = Math.floor(Math.random()*150)
+        let rgbColor = `rgb(${randomColor},${randomColor+randomColor},${randomColor*2})`
+        console.log(rgbColor)
+        container.style.backgroundColor = rgbColor
+    }
+    
+
+</script>
+</html>

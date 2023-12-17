@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inc/Dec</title>
+    <style>
+        body{
+            display: flex;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        #container{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="output">
+            0
+        </div>
+        <div>
+            <button id="btn1" onclick="printInc()">Inc</button>
+            <button id="btn2" onclick="printDec()">Dec</button>
+        </div>
+    </div>
+</body>
+
+<script>
+    let inpu = document.getElementById('input')
+    let btn1 = document.getElementById('btn1')
+    let btn2 = document.getElementById('btn2')
+    let output = document.getElementById('output')
+    let count = 0
+
+    function printInc(){
+        count +=1
+        output.innerText = count
+    }
+    function printDec(){
+        if(count<=0){
+            count = 0
+        }
+        else{
+            count -=1
+            output.innerText = count
+        }
+    }
+</script>
+
+</html>

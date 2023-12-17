@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouncing ball</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+       
+        #up{
+             font-size: 60px;
+        }
+        #down{
+            font-size: 60px;
+        }
+        #left{
+            font-size: 60px;
+            position: absolute;
+            left: 41%;
+        }
+        #right{
+            font-size: 60px;
+            position: absolute;
+            top: 46.5%;
+            right: 41%;
+        }
+        .circle{
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div id="up"><i class="fa-solid fa-chevron-up"></i></div>
+        <div id="left"><i class="fa-solid fa-less-than"></i></div>
+        <div class="circle"></div>
+        <div id="down"><i class="fa-solid fa-chevron-down"></i></div>
+        <div id="right"><i class="fa-solid fa-greater-than"></i></div>
+    </div>
+    <script>
+        let up = document.getElementById('up')
+        let down = document.getElementById('down')
+        let left = document.getElementById('left')
+        let right = document.getElementById('right')
+        let circle = document.querySelector('.circle')
+
+        up.addEventListener('click', ()=>{  
+            circle.style.transform = 'translatey(-200px)'
+            circle.style.transition='2s'
+        })
+        down.addEventListener('click',()=>{
+            circle.style.transform = 'translatey(200px)'
+            circle.style.transition='2s'
+        })
+        right.addEventListener('click', ()=>{
+            circle.style.transform = 'translatex(200px)'
+            circle.style.transition='2s'
+        })
+        left.addEventListener('click',()=>{
+            circle.style.transform = 'translatex(-200px)'
+            circle.style.transition='2s'
+        })
+    </script>
+</body>
+</html>

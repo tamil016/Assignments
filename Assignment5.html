@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculator</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="navbar">
+            <input type="text" id="getInput" placeholder="Enter salary per month">
+            <button id="btn">Check</button>
+        </div>
+        <div id="main">
+            <h3>You have to pay <span id="change">0</span> tax per year</h3>
+        </div>
+    </div>
+    <script>
+        let getInput = document.getElementById('getInput');
+        let btn = document.getElementById('btn');
+        let change = document.getElementById('change')
+
+        btn.addEventListener('click', ()=>{
+            let data = getInput.value
+            if(data<=100000){
+                change.innerText = '0'
+            }
+            else if(data>100000 && data<=500000){
+                let value = (data/100)*10;
+                change.innerText = value
+            }
+            else if(data>500000 && data<=1000000){
+                let value = (data/100)*20;
+                change.innerText = value
+            }
+            else {
+                let value = (data/100)*30;
+                change.innerText = value
+            }
+        })
+
+    </script>
+</body>
+</html>

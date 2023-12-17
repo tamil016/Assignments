@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domain checker</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        #container{
+            border: 1px solid black;
+            width: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #main{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+        }
+        #content{
+            height: 50px;
+            width: 250px;
+            margin-left: 75px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="main">
+            <input type="text" id="getInput" placeholder="Enter a domain"> <br>
+            <button id="btn">Check</button>
+        </div>
+        <div id="content">
+            
+        </div>
+    </div>
+    <script>
+        let arr = ['a','b','c','x','y','z']
+        let getInput = document.getElementById('getInput');
+        let btn = document.getElementById('btn');
+        let content = document.getElementById('content');
+
+        btn.addEventListener('click', ()=>{
+            let data = getInput.value
+            for(let x of arr){
+                if(x==data){
+                    content.innerText = `Domain ${data} is already available`
+                    break;
+                }
+                else{
+                    content.innerText = `Domain ${data} is not availabe`
+                }
+            }
+        })
+    </script>
+</body>
+</html>

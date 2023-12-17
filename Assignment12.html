@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter cards</title>
+    <style>
+        .container {
+            min-height: 100vh;
+            background-color: rgb(58, 55, 55);
+        }
+
+        #navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        #cardsDisplay {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin: 20px;
+        }
+
+        #card {
+            background-color: white;
+        }
+        #navbar h3{
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="navbar">
+            <h3 id="all">All</h3>
+            <h3 id="men">Men</h3>
+            <h3 id="women">Women</h3>
+            <h3 id="count">Total Count : 0</h3>
+        </div>
+        <div id="cardsDisplay">
+
+        </div>
+    </div>
+    <script>
+        let arr = [
+            {
+                id: 1,
+                name: 'shoe',
+                price: 1500,
+                Discription: 'latest design available',
+                for : 'men'
+            },
+            {
+                id: 2,
+                name: 'shirt',
+                price: 1000,
+                Discription: 'latest design available',
+                for : 'men'
+            },
+            {
+                id: 3,
+                name: 'pant',
+                price: 1600,
+                Discription: 'latest design available',
+                for : 'men'
+            },
+            {
+                id: 4,
+                name: 'shorts',
+                price: 500,
+                Discription: 'latest design available',
+                for : 'men'
+            },
+            {
+                id: 5,
+                name: 'tshirt',
+                price: 1500,
+                Discription: 'latest design available',
+                for : 'men'
+            },
+            {
+                id: 6,
+                name: 'laptop',
+                price: 50000,
+                Discription: 'latest design available',
+                for : 'men'
+            },
+            {
+                id: 7,
+                name: 'mobile',
+                price: 15000,
+                Discription: 'latest design available',
+                for : 'women'
+            },
+            {
+                id: 8,
+                name: 'water bottle',
+                price: 100,
+                Discription: 'latest design available',
+                for : 'women'
+            },
+            {
+                id: 9,
+                name: 'charger',
+                price: 900,
+                Discription: 'latest design available',
+                for : 'men'
+            },
+            {
+                id: 10,
+                name: 'bag',
+                price: 500,
+                Discription: 'latest design available',
+                for : 'women'
+            },
+            {
+                id: 11,
+                name: 'slipper',
+                price: 1200,
+                Discription: 'latest design available',
+                for : 'women'
+            },
+            {
+                id: 12,
+                name: 'belt',
+                price: 400,
+                Discription: 'latest design available',
+                for : 'men'
+            },
+            {
+                id: 13,
+                name: 'pendrive',
+                price: 1500,
+                Discription: 'latest design available',
+                for : 'women'
+            },
+        ]
+
+        let cardsDisplay = document.getElementById('cardsDisplay')
+        let allProduct = document.getElementById('all');
+        let menProduct = document.getElementById('men');
+        let womenProduct = document.getElementById('women');
+        let countCard = document.getElementById('count')
+        
+        function reduce(arr){
+            let count = 0
+            cardsDisplay.innerHTML = ''
+            arr.map((data)=>{
+                let cards = document.createElement('div')
+                cards.id = ('card')
+                cardsDisplay.appendChild(cards)
+                cards.innerHTML = `<h3>Product name : ${data.name}</h3>
+                                    <p>Price : ${data.price} </p>
+                                    <p>Discription : ${data.Discription}</p>`
+                               
+                count++;
+                countCard.innerText = `Total Count : ${count}`
+
+            })
+        }
+        reduce(arr)
+       
+        allProduct.addEventListener('click', ()=>{
+            reduce(arr);
+        });
+        menProduct.addEventListener('click', ()=>{
+           let filteringMen =  arr.filter((item)=> item.for == 'men');
+           reduce(filteringMen)
+        })
+        womenProduct.addEventListener('click', ()=>{
+            let filteringWomen = arr.filter((item)=> item.for == 'women')
+            reduce(filteringWomen)
+        })
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 280px;
+            height: 430px;
+            border-radius: 30px;
+            background-color: rgb(26, 24, 24);
+        }
+        #display{
+            height: 80px;
+            width: 248px;
+            outline: none;
+            border: none;
+            text-align: end;
+            font-size: 30px;
+            border-radius: 20px;
+            background-color: rgb(26, 24, 24);
+            color: white;
+        }
+        .btn{
+            margin: 10px;
+        }
+        .btn button{
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            margin-left: 6px;
+            border-radius: 50px;
+            border: none;
+            background-color: rgb(68, 59, 59);
+            color: white;
+            font-weight: 100;
+            font-size: 18px;
+        }
+        .btn .oprator{
+            background-color: orange;
+        }
+        .btn .btn1{
+            background-color: rgb(228, 216, 216);
+            color: black;
+        }
+        .btn1:hover{
+            background-color: white;
+        }
+        .btn2:hover{
+            background-color: rgb(148, 138, 138);
+        }
+        .oprator:hover{
+            background-color: white;
+            color: orange;
+        }
+        .btn>button:nth-child(17){
+            width: 115px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="input">
+            <input type="text" id="display">
+        </div>
+        <div class="btn">
+            <button class="btn1" onclick="display.value =''">AC</button>
+            <button class="btn1" onclick="display.value = display.value.slice(0,-1)">Del</button>
+            <button class="btn1" onclick="display.value +='%'">%</button>
+            <button class="oprator" onclick="display.value +='/'">/</button>
+            <button class="btn2" onclick="display.value +='7'">7</button>
+            <button class="btn2" onclick="display.value +='8'">8</button>
+            <button class="btn2" onclick="display.value +='9'">9</button>
+            <button class="oprator" onclick="display.value +='*'">X</button>
+            <button class="btn2" onclick="display.value +='4'">4</button>
+            <button class="btn2" onclick="display.value +='5'">5</button>
+            <button class="btn2" onclick="display.value +='6'">6</button>
+            <button class="oprator" onclick="display.value +='-'">-</button>
+            <button class="btn2" onclick="display.value +='1'">1</button>
+            <button class="btn2" onclick="display.value +='2'">2</button>
+            <button class="btn2" onclick="display.value +='3'">3</button>
+            <button class="oprator" onclick="display.value +='+'">+</button>
+            <button class="btn2" onclick="display.value +='0'">0</button>
+            <button class="btn2" onclick="display.value +='.'">.</button>
+            <button class="oprator" onclick="display.value = eval(display.value)">=</button>
+        </div>
+    </div>
+</body>
+</html>

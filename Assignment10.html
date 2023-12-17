@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            min-height: 100vh;
+            background-color: rgb(58, 55, 55);
+        }
+
+        #navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #cardsDisplay {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin: 20px;
+        }
+        #card{
+            background-color: white;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="navbar">
+            <button id="btn">Generate</button>
+        </div>
+        <div id="cardsDisplay">
+
+        </div>
+    </div>
+    <script>
+        let arr = [
+            {
+                id: 1,
+                name: 'shoe',
+                price: 1500,
+                Discription: 'latest design available'
+            },
+            {
+                id: 2,
+                name: 'shirt',
+                price: 1000,
+                Discription: 'latest design available'
+            },
+            {
+                id: 3,
+                name: 'pant',
+                price: 1600,
+                Discription: 'latest design available'
+            },
+            {
+                id: 4,
+                name: 'shorts',
+                price: 500,
+                Discription: 'latest design available'
+            },
+            {
+                id: 5,
+                name: 'tshirt',
+                price: 1500,
+                Discription: 'latest design available'
+            },
+            {
+                id: 6,
+                name: 'laptop',
+                price: 50000,
+                Discription: 'latest design available'
+            },
+            {
+                id: 7,
+                name: 'mobile',
+                price: 15000,
+                Discription: 'latest design available'
+            },
+            {
+                id: 8,
+                name: 'water bottle',
+                price: 100,
+                Discription: 'latest design available'
+            },
+            {
+                id: 9,
+                name: 'charger',
+                price: 900,
+                Discription: 'latest design available'
+            },
+            {
+                id: 10,
+                name: 'bag',
+                price: 500,
+                Discription: 'latest design available'
+            },
+            {
+                id: 11,
+                name: 'slipper',
+                price: 1200,
+                Discription: 'latest design available'
+            },
+            {
+                id: 12,
+                name: 'belt',
+                price: 400,
+                Discription: 'latest design available'
+            },
+            {
+                id: 13,
+                name: 'pendrive',
+                price: 1500,
+                Discription: 'latest design available'
+            },
+        ]
+
+        let btn = document.getElementById('btn');
+        let cardsDisplay = document.getElementById('cardsDisplay')
+        
+        
+        btn.addEventListener('click', ()=>{
+            cardsDisplay.innerHTML = ''
+            arr.map((data)=>{
+                let cards = document.createElement('div')
+                cards.id = ('card')
+                cardsDisplay.appendChild(cards)
+                cards.innerHTML = `<h3>Product name  : ${data.name}</h3>
+                                    <p>Price : ${data.price}</p>
+                                    <p>Discription : ${data.Discription}</p>`
+            })
+            
+        })
+
+    </script>
+</body>
+
+</html>

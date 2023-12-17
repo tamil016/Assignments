@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root">
+    </div>
+    <script>
+        //let row = prompt('How many rows you want');
+        //let column = prompt('How many columns you want');
+        let row = 5;
+        let column = 7;
+
+
+        let table = document.createElement('table');
+        let root = document.getElementById('root')
+        root.appendChild(table)
+
+        for (i = 1; i <= row; i++) {
+            let tr = document.createElement('tr')
+            table.appendChild(tr)
+            if(i%2 ==0){
+                tr.style.backgroundColor = 'red'
+            }
+            else{
+                tr.style.backgroundColor = 'green'
+            }
+
+            for (j = 1; j <= column; j++) {
+                let td = document.createElement('td')
+                td.innerText = 'a'
+                tr.appendChild(td)
+            }
+        }
+        table.setAttribute('border','1')
+        table.setAttribute('style','border-collapse:collapse')
+        table.setAttribute('cellpadding', '10')
+
+    </script>
+</body>
+
+</html>

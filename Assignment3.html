@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Color</title>
+    <style>
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #container{
+            display: flex;
+            flex-direction: column;
+        }
+        #display{
+            border: 1px solid black;
+            height: 100px;
+        }
+        #btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="display"></div>
+        <div id="btn">
+            <button onclick="changeColor('red')">red</button>
+            <button onclick="changeColor('blue')">blue</button>
+            <button onclick="changeColor('green')">green</button>
+            <button onclick="changeColor('orange')">orange</button>
+            <button onclick="changeColor('pink')">pink</button>
+            <button onclick="changeColor('black')">black</button>
+        </div>
+    </div>
+    <script>
+        let display = document.getElementById('display')
+        function changeColor(color){
+            display.style.backgroundColor = color
+        }
+    </script>
+</body>
+</html>
