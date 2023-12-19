@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <input type="password" id="input" placeholder="Enter a Password">
+        <i class="fa-regular fa-eye-slash" id="eyeOpen" onclick="change()"></i>
+
+
+    </div>
+    <script>
+        input = document.getElementById('input')
+        eyeOpen = document.getElementById('eyeOpen')
+
+        function change() {
+            if (input.type == "password") {
+                input.type = 'text'
+                eyeOpen.className = "fa-regular fa-eye"
+            }
+            else {
+                input.type = 'password'
+                eyeOpen.className = "fa-regular fa-eye-slash"
+            }
+        }
+
+    </script>
+</body>
+
+</html>
