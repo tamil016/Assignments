@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-size: 25px;
+        }
+        .main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 50px 100px;
+            background-color: black;
+            border-radius: 0px 100px;
+        }
+        #display{
+            border: 1px solid black;
+            padding: 15px 30px;
+            background-color: rgb(82, 74, 74);
+            color: white;
+            border-radius: 0px 100px;
+            font-weight: bold;
+        }
+        .btn button{
+            padding: 5px 15px;
+            margin-top: 20px;
+            font-size: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 70px;
+        }
+        #startStop{
+            background-color: red;
+            color: white;
+        }
+        #reset{
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div id="display">
+            00 : 00 : 00
+        </div>
+        <div class="btn">
+            <button id="startStop" onclick="startStopTimer()">Start</button>
+            <button id="reset" onclick="resetTimer()">Reset</button>
+        </div>
+        
+    </div>
+    <script>
+        let display = document.getElementById('display')
+        let startStop = document.getElementById('startStop')
+        let reset = document.getElementById('reset')
+
+        let timer;
+        let secs = 0;
+        let mins = 0;
+        let hurs = 0;
+
+        function startStopTimer(){
+            if(startStop.innerText === 'Start'){
+                startStop.innerText = 'Pause';
+                timer = setInterval(updateTimer, 1000);
+            }
+            else{
+                startStop.innerText = 'Start';
+                clearInterval(timer);
+            }
+        }
+        function updateTimer(){
+            secs++;
+            if(secs == 60){
+                secs = 0;
+                mins++;
+                if(mins == 60){
+                    mins = 0;
+                    hurs++;
+                }
+            }
+            display.innerText = `${formatTime(hurs)} : ${formatTime(mins)} : ${formatTime(secs)}`
+        }
+        function resetTimer(){
+            clearInterval(timer);
+            startStop.innerText = 'Start';
+            secs = 0;
+            mins = 0;
+            hurs = 0;
+            display.innerText = `${formatTime(hurs)} : ${formatTime(mins)} : ${formatTime(secs)}`
+        }
+
+        function formatTime(time){
+            return time < 10 ? '0'+time : time
+        }
+    </script>
+</body>
+</html>
