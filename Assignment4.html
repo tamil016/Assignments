@@ -25,8 +25,8 @@
     let inpu = document.getElementById('inpu')
     let container = document.getElementById('container')
     function changeColor(){
-        let randomColor  = Math.floor(Math.random()*150)
-        let rgbColor = `rgb(${randomColor},${randomColor+randomColor},${randomColor*2})`
+        let randomColor  = Math.floor(Math.random()*75)
+        let rgbColor = `rgb(${randomColor+(Math.floor(Math.random()*80))},${randomColor+60},${randomColor*2})`
         console.log(rgbColor)
         container.style.backgroundColor = rgbColor
     }
